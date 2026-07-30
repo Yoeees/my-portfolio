@@ -16,6 +16,7 @@ export interface Project {
 }
 
 export interface Certificate {
+  pdf: boolean;
   title: string;
   issuer: string;
   date?: string;
@@ -94,13 +95,12 @@ export const ACCENT: Record<Project["accent"], { text: string; border: string; h
 //   ];
 // ---------------------------------------------------------------------------
 export const CERTIFICATES: Certificate[] = [
-
-
   {
     title: "Data Engineering Professional Certificate",
     issuer: "DataCamp",
     date: "2026",
     url: "https://www.datacamp.com/statement-of-accomplishment/track/1fecdc0cde3cfd03cd0de1acb24ded464ea93371?raw=1",
     image: dataengineerCert,
+    pdf: true,
   }
 ];

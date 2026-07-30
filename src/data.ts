@@ -16,12 +16,13 @@ export interface Project {
 }
 
 export interface Certificate {
-  pdf: boolean;
   title: string;
   issuer: string;
   date?: string;
   url?: string;
   image?: string;
+  pdf?: string;
+
 }
 
 export const LANGUAGES: string[] = ["English", "Tagalog", "Cebuano", "Spanish"];

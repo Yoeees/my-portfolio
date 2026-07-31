@@ -25,6 +25,19 @@ export interface Certificate {
 
 }
 
+export interface NavLink {
+  href: string;
+  label: string;
+}
+
+export const NAV_LINKS: NavLink[] = [
+  { href: "#about", label: "About" },
+  { href: "#stack", label: "Stack" },
+  { href: "#projects", label: "Projects" },
+  { href: "#certificates", label: "Certificates" },
+  { href: "#contact", label: "Contact" },
+];
+
 export const LANGUAGES: string[] = ["English", "Tagalog", "Cebuano", "Spanish"];
 
 export const EDUCATION = {
@@ -69,11 +82,6 @@ export const PROJECTS: Project[] = [
     tags: ["YOLO", "Computer Vision", "Mobile", "No-Code ML"],
   },
 ];
-
-export const ACCENT: Record<Project["accent"], { text: string; border: string; hoverBorder: string }> = {
-  emerald: { text: "text-emerald-700", border: "border-emerald-700/30", hoverBorder: "hover:border-emerald-600/60" },
-  red: { text: "text-red-700", border: "border-red-700/30", hoverBorder: "hover:border-red-600/60" },
-};
 
 // ---------------------------------------------------------------------------
 // Add your certificates here. Each entry needs at minimum a title and

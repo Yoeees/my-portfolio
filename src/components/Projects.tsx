@@ -1,5 +1,6 @@
 import SectionTag from "./SectionTag";
-import { PROJECTS, ACCENT } from "../data";
+import { PROJECTS } from "../data";
+import { ACCENT } from "../lib/accents";
 
 export default function Projects() {
   return (

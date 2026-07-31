@@ -1,9 +1,9 @@
 import Header from "./components/Header";
 import Hero from "./components/sections/Hero";
-import About from "./components/About";
-import Stack from "./components/Stack";
+import About from "./components/sections/About";
+import Stack from "./components/sections/Stack";
 import Projects from "./components/Projects";
-import Certificates from "./components/Certificates";
+import Certificates from "./components/sections/Certificates";
 import Contact from "./components/Contact";
 
 // Make sure index.css (with the @import "tailwindcss" line) is imported

@@ -4,7 +4,7 @@ import About from "./components/sections/About";
 import Stack from "./components/sections/Stack";
 import Projects from "./components/Projects";
 import Certificates from "./components/sections/Certificates";
-import Contact from "./components/Contact";
+import Contact from "./components/sections/Contact";
 
 // Make sure index.css (with the @import "tailwindcss" line) is imported
 // once in main.tsx.

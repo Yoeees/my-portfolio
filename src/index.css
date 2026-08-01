@@ -1,23 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
 
-@theme {
-  --color-paper: #f5f5f4;
-  --color-ink: #1c1917;
-  --color-terminal: #15803d;
-  --color-terminal-bright: #16a34a;
-  --color-signal: #92400e;
-  --color-signal-strong: #78350f;
-  --color-warning: #b91c1c;
+@custom-variant dark (&:where(.dark, .dark *));
 
-  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-  --font-body: 'Source Serif 4', ui-serif, Georgia, serif;
+@theme {
+  --color-paper: #f8fafc;
+  --color-panel: #ffffff;
+  --color-panel-muted: #f1f5f9;
+  --color-ink: #0f172a;
+  --color-muted: #475569;
+  --color-soft: #94a3b8;
+  --color-line: #e2e8f0;
+  --color-accent: #0f766e;
+  --color-accent-bright: #14b8a6;
+  --color-accent-soft: #ccfbf1;
+  --color-warning: #dc2626;
+
+  --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.dark {
+  --color-paper: #020617;
+  --color-panel: #0f172a;
+  --color-panel-muted: #111827;
+  --color-ink: #e5eefb;
+  --color-muted: #94a3b8;
+  --color-soft: #64748b;
+  --color-line: #1e293b;
+  --color-accent: #5eead4;
+  --color-accent-bright: #2dd4bf;
+  --color-accent-soft: #134e4a;
+  --color-warning: #f87171;
 }
 
 @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }

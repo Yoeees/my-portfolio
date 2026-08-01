@@ -1,8 +1,12 @@
-// src/App.tsx
+import { ThemeProvider } from "./lib/theme";
 import Portfolio from "./Portfolio";
 
 function App() {
-  return <Portfolio />;
+  return (
+    <ThemeProvider>
+      <Portfolio />
+    </ThemeProvider>
+  );
 }
 
 export default App;

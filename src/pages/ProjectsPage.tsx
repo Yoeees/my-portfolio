@@ -39,6 +39,7 @@ function ProjectsPageContent() {
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
+              {theme === "dark" ? "LIGHT_MODE" : "DARK_MODE"}
             </button>
             <p className="font-mono text-xs uppercase tracking-widest text-soft">
               TOTAL: {PROJECTS.length} systems

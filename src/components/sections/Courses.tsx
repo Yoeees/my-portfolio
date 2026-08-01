@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, X } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Section from "../ui/Section";
 import Reveal from "../ui/Reveal";
 import { COURSES, type Course } from "../../data";
@@ -72,20 +72,36 @@ export default function Courses() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
           onClick={() => setSelectedImage(null)}
         >
-          <button
-            type="button"
-            className="absolute top-4 right-4 text-white hover:text-accent transition-colors"
-            onClick={() => setSelectedImage(null)}
-            aria-label="Close"
-          >
-            <X size={24} />
-          </button>
-          <img
-            src={selectedImage}
-            alt="Statement of accomplishment"
-            className="max-w-full max-h-[90vh] object-contain border-2 border-line bg-panel shadow-brutal-lg"
+          <div
+            className="w-full max-w-4xl border-2 border-line bg-panel shadow-brutal-lg"
             onClick={(e) => e.stopPropagation()}
-          />
+          >
+            <div className="flex items-center justify-between border-b-2 border-line px-4 py-3">
+              <span className="font-mono text-xs uppercase tracking-widest text-accent">
+                STATEMENT_VIEWER.exe
+              </span>
+              <button
+                type="button"
+                className="cursor-pointer font-mono text-xs text-muted hover:text-accent transition-colors"
+                onClick={() => setSelectedImage(null)}
+                aria-label="Close"
+              >
+                [ESC] close
+              </button>
+            </div>
+            <div className="p-4">
+              <img
+                src={selectedImage}
+                alt="Statement of accomplishment"
+                className="w-full object-contain border-2 border-line bg-panel-muted"
+              />
+            </div>
+            <div className="border-t-2 border-line px-4 py-2">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-soft">
+                // view_file --type=statement
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </Section>

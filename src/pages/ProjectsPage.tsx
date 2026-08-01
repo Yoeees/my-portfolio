@@ -65,7 +65,7 @@ function ProjectsPageContent() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">{project.body}</p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
-                    <Tag key={tag} className="text-[10px]" static>
+                    <Tag key={tag} className="text-[10px]" >
                       {tag}
                     </Tag>
                   ))}

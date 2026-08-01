@@ -22,7 +22,7 @@ export default function Projects() {
               <p className="mt-2 text-sm leading-relaxed text-muted">{p.body}</p>
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {p.tags.map((t) => (
-                  <Tag key={t} className="text-[10px]" static>
+                  <Tag key={t} className="text-[10px]" >
                     {t}
                   </Tag>
                 ))}

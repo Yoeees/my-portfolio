@@ -7,7 +7,7 @@ interface TagProps extends HTMLAttributes<HTMLSpanElement> {
 export default function Tag({ children, className = "", ...rest }: TagProps) {
   return (
     <span
-      className={`font-mono border rounded px-1.5 py-0.5 ${className}`}
+      className={`font-mono border rounded px-1.5 py-0.5 transition-colors duration-150 hover:border-accent hover:bg-accent-soft hover:text-accent ${className}`}
       {...rest}
     >
       {children}

@@ -4,6 +4,7 @@ import About from "./components/sections/About";
 import Stack from "./components/sections/Stack";
 import Projects from "./components/sections/Projects";
 import Certificates from "./components/sections/Certificates";
+import Courses from "./components/sections/Courses";
 import Contact from "./components/sections/Contact";
 import Container from "./components/ui/Container";
 
@@ -17,6 +18,7 @@ export default function Portfolio() {
         <Stack />
         <Projects />
         <Certificates />
+        <Courses />
         <Contact />
       </Container>
     </div>

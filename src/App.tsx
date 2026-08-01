@@ -1,10 +1,13 @@
 import { ThemeProvider } from "./lib/theme";
 import Portfolio from "./Portfolio";
+import ProjectsPage from "./pages/ProjectsPage";
 
 function App() {
+  const isProjectsPage = window.location.pathname === "/projects";
+
   return (
     <ThemeProvider>
-      <Portfolio />
+      {isProjectsPage ? <ProjectsPage /> : <Portfolio />}
     </ThemeProvider>
   );
 }

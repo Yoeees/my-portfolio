@@ -30,6 +30,8 @@ export interface NavLink {
   label: string;
 }
 
+export const STATUS_LINE = "open to data engineering roles · BS CS 2026";
+
 export const NAV_LINKS: NavLink[] = [
   { href: "#about", label: "About" },
   { href: "#stack", label: "Stack" },

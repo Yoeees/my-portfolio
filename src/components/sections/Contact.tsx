@@ -60,7 +60,7 @@ export default function Contact() {
     <Section id="contact" title="CONNECT">
       <div className="border-2 border-line bg-panel p-6 shadow-brutal">
         <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
-          // Let&rsquo;s build something useful.
+          Let&rsquo;s build something useful.
         </h2>
         <p className="mt-3 max-w-xl text-sm text-muted">
           Open to data engineering roles and collaborations. Reach out below.

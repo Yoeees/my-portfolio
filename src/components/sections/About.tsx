@@ -38,7 +38,7 @@ export default function About() {
             </p>
             <div className="flex flex-wrap gap-1.5">
               {LANGUAGES.map((lang) => (
-                <Tag key={lang} className="text-xs border-2 border-line text-muted">
+                <Tag key={lang} className="text-xs text-muted">
                   {lang}
                 </Tag>
               ))}

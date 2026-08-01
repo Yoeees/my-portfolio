@@ -2,7 +2,6 @@ import Section from "../ui/Section";
 import Tag from "../ui/Tag";
 import Reveal from "../ui/Reveal";
 import { PROJECTS } from "../../data";
-import { ACCENT } from "../../lib/accents";
 
 export default function Projects() {
   return (
@@ -10,12 +9,10 @@ export default function Projects() {
       <div className="space-y-4">
         {PROJECTS.map((p, i) => (
           <Reveal key={p.title} delay={i * 80}>
-            <article
-              className={`group border-2 border-line bg-panel p-5 transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal ${ACCENT[p.accent].hoverBorder}`}
-            >
+            <article className="group border-2 border-line bg-panel p-5 transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal hover:border-accent">
               <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">
                 <span>{String(i + 1).padStart(2, "0")}</span>
-                <span className={ACCENT[p.accent].text}>{p.tag}</span>
+                <span className="text-accent">{p.tag}</span>
                 <span>{p.period}</span>
               </div>
 
@@ -25,7 +22,7 @@ export default function Projects() {
               <p className="mt-2 text-sm leading-relaxed text-muted">{p.body}</p>
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {p.tags.map((t) => (
-                  <Tag key={t} className="text-[10px] border-2 border-line text-muted">
+                  <Tag key={t} className="text-[10px]">
                     {t}
                   </Tag>
                 ))}

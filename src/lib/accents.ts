@@ -1,15 +1,6 @@
-import type { Project } from "../data";
-
-export const ACCENT: Record<
-  Project["accent"],
-  { text: string; border: string; hoverBorder: string }
-> = {
-  emerald: {
-    text: "text-ink",
-    border: "border-line",
-    hoverBorder: "hover:border-accent",
-  },
-  red: {
+// Accent mapping removed - all projects use consistent styling
+export const ACCENT = {
+  default: {
     text: "text-ink",
     border: "border-line",
     hoverBorder: "hover:border-accent",

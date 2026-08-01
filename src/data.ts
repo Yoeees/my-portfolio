@@ -7,7 +7,6 @@ export interface StackGroup {
 
 export interface Project {
   tag: string;
-  accent: "emerald" | "red";
   title: string;
   period: string;
   body: string;
@@ -72,7 +71,6 @@ export const STACK: StackGroup[] = [
 export const PROJECTS: Project[] = [
   {
     tag: "THESIS · ANOMALY DETECTION",
-    accent: "emerald",
     title: "Reinforcement Learning for IoT Anomaly Detection",
     period: "Undergraduate Thesis",
     body:
@@ -81,7 +79,6 @@ export const PROJECTS: Project[] = [
   },
   {
     tag: "OJT · DEFECT DETECTION",
-    accent: "red",
     title: "Robusta Coffee Defect Detection + No-Code Training Platform",
     period: "On-the-Job Training, DOST-Caraga",
     body:

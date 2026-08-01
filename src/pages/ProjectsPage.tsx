@@ -2,7 +2,6 @@ import { ArrowLeft, Moon, Sun } from "lucide-react";
 import { ThemeProvider } from "../lib/theme";
 import { useTheme } from "../lib/theme-context";
 import { PROJECTS } from "../data";
-import { ACCENT } from "../lib/accents";
 import Tag from "../components/ui/Tag";
 
 function ProjectsPageContent() {
@@ -52,11 +51,11 @@ function ProjectsPageContent() {
             {PROJECTS.map((project, i) => (
               <article
                 key={project.title}
-                className={`border-2 border-line bg-panel p-5 transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal ${ACCENT[project.accent].hoverBorder}`}
+                className="border-2 border-line bg-panel p-5 transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal hover:border-accent"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">
                   <span>{String(i + 1).padStart(2, "0")}</span>
-                  <span className={ACCENT[project.accent].text}>{project.tag}</span>
+                  <span className="text-accent">{project.tag}</span>
                   <span>{project.period}</span>
                 </div>
 
@@ -66,7 +65,7 @@ function ProjectsPageContent() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">{project.body}</p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
-                    <Tag key={tag} className="text-[10px] border-2 border-line text-muted">
+                    <Tag key={tag} className="text-[10px]">
                       {tag}
                     </Tag>
                   ))}

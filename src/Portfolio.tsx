@@ -9,7 +9,7 @@ import Container from "./components/ui/Container";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-paper text-ink font-body bg-[radial-gradient(circle,rgba(120,113,108,0.18)_1px,transparent_1px)] bg-[length:18px_18px]">
+    <div className="min-h-screen bg-paper text-ink font-body">
       <Container>
         <Header />
         <Hero />

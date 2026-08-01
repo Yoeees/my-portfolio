@@ -5,13 +5,13 @@ export const ACCENT: Record<
   { text: string; border: string; hoverBorder: string }
 > = {
   emerald: {
-    text: "text-accent",
-    border: "border-accent/30",
-    hoverBorder: "hover:border-accent/60",
+    text: "text-ink",
+    border: "border-line",
+    hoverBorder: "hover:border-accent",
   },
   red: {
-    text: "text-warning",
-    border: "border-warning/30",
-    hoverBorder: "hover:border-warning/60",
+    text: "text-ink",
+    border: "border-line",
+    hoverBorder: "hover:border-accent",
   },
 };

@@ -7,7 +7,7 @@ export default function Certificates() {
   return (
     <Section id="certificates" title="VERIFIED_CERTS">
       {CERTIFICATES.length === 0 ? (
-        <div className="border border-dashed border-line bg-panel p-6 text-center">
+        <div className="border-2 border-dashed border-line bg-panel p-6 text-center">
           <p className="font-mono text-xs uppercase tracking-widest text-soft">
             no certificates logged yet
           </p>
@@ -16,7 +16,7 @@ export default function Certificates() {
         <div className="space-y-3">
           {CERTIFICATES.map((cert, i) => (
             <Reveal key={i} delay={i * 80}>
-              <div className="group border border-line bg-panel px-5 py-4 transition-colors hover:border-accent/40 hover:bg-panel-muted">
+              <div className="group border-2 border-line bg-panel px-5 py-4 transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal hover:border-accent">
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                   <span className="font-mono text-[10px] uppercase tracking-widest text-soft">
                     CRT-{String(i + 1).padStart(2, "0")}

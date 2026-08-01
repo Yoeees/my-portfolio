@@ -11,7 +11,7 @@ export default function Projects() {
         {PROJECTS.map((p, i) => (
           <Reveal key={p.title} delay={i * 80}>
             <article
-              className={`group border border-line bg-panel p-5 transition-all duration-200 hover:-translate-y-1 hover:bg-panel-muted ${ACCENT[p.accent].hoverBorder}`}
+              className={`group border-2 border-line bg-panel p-5 transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal ${ACCENT[p.accent].hoverBorder}`}
             >
               <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">
                 <span>{String(i + 1).padStart(2, "0")}</span>
@@ -25,7 +25,7 @@ export default function Projects() {
               <p className="mt-2 text-sm leading-relaxed text-muted">{p.body}</p>
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {p.tags.map((t) => (
-                  <Tag key={t} className="text-[10px] border-line text-muted">
+                  <Tag key={t} className="text-[10px] border-2 border-line text-muted">
                     {t}
                   </Tag>
                 ))}

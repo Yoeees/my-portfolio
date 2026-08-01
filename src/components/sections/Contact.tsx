@@ -40,7 +40,7 @@ const contactLinks = [
 export default function Contact() {
   return (
     <Section id="contact" title="CONNECT">
-      <div className="border border-line bg-panel p-6">
+      <div className="border-2 border-line bg-panel p-6 shadow-brutal">
         <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
           // Let&rsquo;s build something useful.
         </h2>
@@ -55,7 +55,7 @@ export default function Contact() {
               {...(link.external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
-              className="group flex items-center gap-3 border border-line bg-panel p-3 font-mono text-xs text-muted transition-colors hover:border-accent hover:bg-panel-muted hover:text-accent"
+              className="group flex items-center gap-3 border-2 border-line bg-panel p-3 font-mono text-xs text-muted transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm hover:border-accent hover:bg-accent-soft hover:text-accent"
             >
               {link.icon}
               <span className="break-all">{link.label}</span>

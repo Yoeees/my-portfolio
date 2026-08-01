@@ -16,7 +16,7 @@ function CourseCard({
   return (
     <button
       onClick={() => course.image && onImageClick(course.image)}
-      className="group w-full border border-line bg-panel px-5 py-4 text-left transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:bg-panel-muted"
+      className="group w-full border-2 border-line bg-panel px-5 py-4 text-left transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal hover:border-accent"
     >
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
         <span className="font-mono text-[10px] uppercase tracking-widest text-soft">
@@ -48,7 +48,7 @@ export default function Courses() {
   return (
     <Section id="courses" title="COMPLETED_COURSES">
       {COURSES.length === 0 ? (
-        <div className="border border-dashed border-line bg-panel p-6 text-center">
+        <div className="border-2 border-dashed border-line bg-panel p-6 text-center">
           <p className="font-mono text-xs uppercase tracking-widest text-soft">
             no courses logged yet
           </p>
@@ -83,7 +83,7 @@ export default function Courses() {
           <img
             src={selectedImage}
             alt="Statement of accomplishment"
-            className="max-w-full max-h-[90vh] object-contain border border-line bg-panel shadow-2xl"
+            className="max-w-full max-h-[90vh] object-contain border-2 border-line bg-panel shadow-brutal-lg"
             onClick={(e) => e.stopPropagation()}
           />
         </div>

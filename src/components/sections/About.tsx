@@ -6,8 +6,8 @@ import { EDUCATION, LANGUAGES } from "../../data";
 export default function About() {
   return (
     <Section id="about" title="SYSTEM_USER">
-      <div className="space-y-6">
-        <div className="border border-line bg-panel p-5">
+      <div className="space-y-4">
+        <div className="border-2 border-line bg-panel p-5 shadow-brutal-sm">
           <p className="font-mono text-xs uppercase tracking-widest text-accent mb-3">
             personal_profile
           </p>
@@ -21,7 +21,7 @@ export default function About() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-4">
-          <div className="border border-line bg-panel p-5">
+          <div className="border-2 border-line bg-panel p-5 shadow-brutal-sm">
             <p className="font-mono text-xs uppercase tracking-wide text-accent mb-2 flex items-center gap-1.5">
               <GraduationCap size={13} /> env_education
             </p>
@@ -32,13 +32,13 @@ export default function About() {
               {EDUCATION.school} · {EDUCATION.year}
             </p>
           </div>
-          <div className="border border-line bg-panel p-5">
+          <div className="border-2 border-line bg-panel p-5 shadow-brutal-sm">
             <p className="font-mono text-xs uppercase tracking-wide text-accent mb-3">
               env_languages
             </p>
             <div className="flex flex-wrap gap-1.5">
               {LANGUAGES.map((lang) => (
-                <Tag key={lang} className="text-xs border-line text-muted">
+                <Tag key={lang} className="text-xs border-2 border-line text-muted">
                   {lang}
                 </Tag>
               ))}

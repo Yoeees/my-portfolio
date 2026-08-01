@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { NAV_LINKS } from "../data";
 import { useActiveSection } from "../lib/useActiveSection";
-import { useTheme } from "../lib/theme";
+import { useTheme } from "../lib/theme-context";
 
 export default function Header() {
   const [open, setOpen] = useState(false);

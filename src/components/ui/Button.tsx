@@ -9,9 +9,9 @@ const VARIANT_CLASSES: Record<
   NonNullable<ButtonProps["variant"]>,
   string
 > = {
-  primary: "bg-signal text-stone-50 hover:bg-signal-strong",
-  secondary: "border border-stone-300 hover:border-signal/50",
-  ghost: "text-stone-500 hover:text-signal",
+  primary: "bg-accent text-panel hover:bg-accent-bright",
+  secondary: "border border-line hover:border-accent text-muted hover:text-accent",
+  ghost: "text-muted hover:text-accent",
 };
 
 export default function Button({

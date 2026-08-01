@@ -1,68 +1,9 @@
-import { useState } from "react";
-import { ExternalLink, FileText } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Section from "../ui/Section";
-import StampBadge from "../ui/StampBadge";
-import CertificateModal from "../ui/CertificateModal";
 import Reveal from "../ui/Reveal";
-import { CERTIFICATES, type Certificate } from "../../data";
-
-function CertificateCard({
-  cert,
-  onClick,
-}: {
-  cert: Certificate;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className="text-left relative flex flex-col border border-line rounded-lg bg-panel w-full h-full hover:-translate-y-1 hover:shadow-lg hover:border-accent/40 transition-all duration-200"
-    >
-      <div className="aspect-[4/3] bg-panel-muted border-b border-line rounded-t-lg overflow-hidden">
-        {cert.image ? (
-          <img
-            src={cert.image}
-            alt={cert.title}
-            className="w-full h-full object-contain p-2"
-          />
-        ) : cert.pdf ? (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-1.5 text-soft">
-            <FileText size={28} />
-            <span className="font-mono text-[9px] uppercase tracking-wide">
-              PDF on file
-            </span>
-          </div>
-        ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <StampBadge label="VERIFIED" />
-          </div>
-        )}
-      </div>
-      {cert.image && (
-        <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-accent border-2 border-panel shadow flex items-center justify-center text-panel text-[10px] font-bold">
-          ✓
-        </span>
-      )}
-
-      <div className="p-4">
-        <h3 className="text-ink font-medium leading-snug">{cert.title}</h3>
-        <p className="mt-1 text-sm text-muted">{cert.issuer}</p>
-        <div className="mt-2 flex items-center gap-3 font-mono text-[10px] text-soft">
-          <span>{cert.date || "—"}</span>
-          {cert.url && (
-            <span className="flex items-center gap-1 text-accent">
-              view <ExternalLink size={10} />
-            </span>
-          )}
-        </div>
-      </div>
-    </button>
-  );
-}
+import { CERTIFICATES } from "../../data";
 
 export default function Certificates() {
-  const [selected, setSelected] = useState<Certificate | null>(null);
-
   return (
     <Section id="certificates" title="CERTIFICATES">
       {CERTIFICATES.length === 0 ? (
@@ -73,17 +14,31 @@ export default function Certificates() {
           </p>
         </div>
       ) : (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="flex flex-col gap-3">
           {CERTIFICATES.map((cert, i) => (
-            <Reveal key={i} delay={i * 80} className="h-full">
-              <CertificateCard cert={cert} onClick={() => setSelected(cert)} />
+            <Reveal key={i} delay={i * 80}>
+              <div className="bg-panel border border-line rounded-lg px-5 py-4 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <h3 className="text-ink font-medium leading-snug">
+                  {cert.title}
+                </h3>
+                <p className="text-sm text-muted">{cert.issuer}</p>
+                <span className="font-mono text-[10px] text-soft">
+                  {cert.date || "—"}
+                </span>
+                {cert.url && (
+                  <a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="ml-auto flex items-center gap-1 text-sm text-accent hover:underline"
+                  >
+                    view credential <ExternalLink size={12} />
+                  </a>
+                )}
+              </div>
             </Reveal>
           ))}
         </div>
-      )}
-
-      {selected && (
-        <CertificateModal cert={selected} onClose={() => setSelected(null)} />
       )}
     </Section>
   );

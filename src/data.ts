@@ -1,6 +1,5 @@
 import dataengineerCert from "./assets/certificate_page-0001.jpg";
 
-
 export interface StackGroup {
   group: string;
   items: string[];
@@ -20,9 +19,14 @@ export interface Certificate {
   issuer: string;
   date?: string;
   url?: string;
-  image?: string;
-  pdf?: string;
+}
 
+export interface Course {
+  title: string;
+  issuer: string;
+  date?: string;
+  image?: string;
+  url?: string;
 }
 
 export interface NavLink {
@@ -37,6 +41,7 @@ export const NAV_LINKS: NavLink[] = [
   { href: "#stack", label: "Stack" },
   { href: "#projects", label: "Projects" },
   { href: "#certificates", label: "Certificates" },
+  { href: "#courses", label: "Courses" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -85,33 +90,14 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-// ---------------------------------------------------------------------------
-// Add your certificates here. Each entry needs at minimum a title and
-// issuer — date, url, and image are optional.
-//
-// To include an image, import it at the top of this file (Vite needs a
-// real import to bundle it, a plain string path won't resolve) and
-// reference the imported variable:
-//
-//   import ibmCert from "./assets/certificates/ibm-data-eng.png";
-//
-//   export const CERTIFICATES: Certificate[] = [
-//     {
-//       title: "IBM Data Engineering Professional Certificate",
-//       issuer: "IBM / Coursera",
-//       date: "2026",
-//       url: "https://...",
-//       image: ibmCert,
-//     },
-//   ];
-// ---------------------------------------------------------------------------
-export const CERTIFICATES: Certificate[] = [
+export const CERTIFICATES: Certificate[] = [];
+
+export const COURSES: Course[] = [
   {
     title: "Data Engineering Professional Certificate",
     issuer: "DataCamp",
     date: "2026",
     url: "https://www.datacamp.com/statement-of-accomplishment/track/1fecdc0cde3cfd03cd0de1acb24ded464ea93371?raw=1",
     image: dataengineerCert,
-
-  }
+  },
 ];

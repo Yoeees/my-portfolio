@@ -1,12 +1,11 @@
 import Button from "../ui/Button";
-import { STATUS_LINE } from "../../data";
 
 export default function Hero() {
   return (
-    <section className="py-24 sm:py-32">
+    <section id="home" className="pb-20 lg:hidden">
       <p className="font-mono text-sm text-accent">$ whoami</p>
 
-      <h1 className="mt-5 font-display font-bold tracking-tight text-ink text-4xl sm:text-6xl lg:text-7xl leading-[1.05]">
+      <h1 className="mt-5 font-display font-bold tracking-tight text-ink text-4xl sm:text-6xl leading-[1.05]">
         Johnwences Fabe P. Dumangcas
       </h1>
 
@@ -27,11 +26,6 @@ export default function Hero() {
           Contact Me
         </Button>
       </div>
-
-      <p className="mt-12 font-mono text-xs text-muted inline-flex items-center gap-2">
-        <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-        {STATUS_LINE}
-      </p>
     </section>
   );
 }

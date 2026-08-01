@@ -6,31 +6,26 @@ import { ACCENT } from "../../lib/accents";
 
 export default function Projects() {
   return (
-    <Section id="projects" title="PROJECTS">
-      <div className="grid sm:grid-cols-2 gap-5">
+    <Section id="projects" title="SYSTEM_DEPLOYS">
+      <div className="space-y-4">
         {PROJECTS.map((p, i) => (
-          <Reveal key={p.title} delay={i * 80} className="h-full">
+          <Reveal key={p.title} delay={i * 80}>
             <article
-              className={`bg-panel border border-line rounded-lg p-6 h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ${ACCENT[p.accent].hoverBorder}`}
+              className={`group border border-line bg-panel p-5 transition-all duration-200 hover:-translate-y-1 hover:bg-panel-muted ${ACCENT[p.accent].hoverBorder}`}
             >
-              <p
-                className={`font-mono text-xs uppercase tracking-wide ${ACCENT[p.accent].text} mb-3`}
-              >
-                {p.tag}
-              </p>
-              <p className="font-mono text-xs text-soft mb-1">{p.period}</p>
-              <h3 className="font-display font-semibold text-ink leading-snug">
+              <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                <span className={ACCENT[p.accent].text}>{p.tag}</span>
+                <span>{p.period}</span>
+              </div>
+
+              <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-ink group-hover:text-accent">
                 {p.title}
               </h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed">
-                {p.body}
-              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{p.body}</p>
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {p.tags.map((t) => (
-                  <Tag
-                    key={t}
-                    className="text-[10px] border-line text-muted"
-                  >
+                  <Tag key={t} className="text-[10px] border-line text-muted">
                     {t}
                   </Tag>
                 ))}

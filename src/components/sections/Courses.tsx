@@ -6,30 +6,37 @@ import { COURSES, type Course } from "../../data";
 
 function CourseCard({
   course,
+  index,
   onImageClick,
 }: {
   course: Course;
+  index: number;
   onImageClick: (img: string) => void;
 }) {
   return (
     <button
       onClick={() => course.image && onImageClick(course.image)}
-      className="text-left w-full border border-line rounded-lg bg-panel p-5 hover:-translate-y-1 hover:shadow-lg hover:border-accent/40 transition-all duration-200"
+      className="group w-full border border-line bg-panel px-5 py-4 text-left transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:bg-panel-muted"
     >
-      <h3 className="text-ink font-medium leading-snug">{course.title}</h3>
-      <p className="mt-1 text-sm text-muted">{course.issuer}</p>
-      <div className="mt-2 flex items-center gap-3 font-mono text-[10px] text-soft">
-        <span>{course.date || "—"}</span>
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <span className="font-mono text-[10px] uppercase tracking-widest text-soft">
+          CRS-{String(index + 1).padStart(2, "0")}
+        </span>
+        <h3 className="text-ink font-medium leading-snug group-hover:text-accent">
+          {course.title}
+        </h3>
+        <p className="text-sm text-muted">{course.issuer}</p>
+        <span className="font-mono text-[10px] text-soft">
+          {course.date || "—"}
+        </span>
+      </div>
+      <div className="mt-2 flex gap-3 font-mono text-[10px] text-accent">
         {course.url && (
-          <span className="flex items-center gap-1 text-accent">
-            view <ExternalLink size={10} />
+          <span className="flex items-center gap-1">
+            Open_Link <ExternalLink size={10} />
           </span>
         )}
-        {course.image && (
-          <span className="flex items-center gap-1 text-accent">
-            view statement
-          </span>
-        )}
+        {course.image && <span>View_File</span>}
       </div>
     </button>
   );
@@ -39,19 +46,20 @@ export default function Courses() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <Section id="courses" title="COURSES">
+    <Section id="courses" title="COMPLETED_COURSES">
       {COURSES.length === 0 ? (
-        <div className="border border-dashed border-line rounded p-8 text-center">
-          <p className="font-mono text-xs text-soft">
-            no courses logged yet — add entries to the COURSES array in data.ts.
+        <div className="border border-dashed border-line bg-panel p-6 text-center">
+          <p className="font-mono text-xs uppercase tracking-widest text-soft">
+            no courses logged yet
           </p>
         </div>
       ) : (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="space-y-3">
           {COURSES.map((course, i) => (
             <Reveal key={i} delay={i * 80}>
               <CourseCard
                 course={course}
+                index={i}
                 onImageClick={(img) => setSelectedImage(img)}
               />
             </Reveal>
@@ -75,7 +83,7 @@ export default function Courses() {
           <img
             src={selectedImage}
             alt="Statement of accomplishment"
-            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            className="max-w-full max-h-[90vh] object-contain border border-line bg-panel shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
         </div>

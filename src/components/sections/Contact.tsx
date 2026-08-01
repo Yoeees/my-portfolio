@@ -8,6 +8,7 @@ function GithubIcon({ size = 16 }: { size?: number }) {
     </svg>
   );
 }
+
 function LinkedinIcon({ size = 16 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -38,15 +39,15 @@ const contactLinks = [
 
 export default function Contact() {
   return (
-    <Section id="contact" title="CONTACT" className="border-t border-line">
-      <div className="flex flex-col items-center rounded-2xl border border-line bg-panel p-8 text-center sm:p-10">
-        <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
-          Let&rsquo;s build something useful.
+    <Section id="contact" title="CONNECT">
+      <div className="border border-line bg-panel p-6">
+        <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
+          // Let&rsquo;s build something useful.
         </h2>
-        <p className="mt-3 max-w-xl text-muted">
+        <p className="mt-3 max-w-xl text-sm text-muted">
           Open to data engineering roles and collaborations. Reach out below.
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-6 space-y-2">
           {contactLinks.map((link) => (
             <a
               key={link.label}
@@ -54,17 +55,17 @@ export default function Contact() {
               {...(link.external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
-              className="inline-flex max-w-full items-center gap-2 rounded-lg border border-line px-4 py-2.5 text-sm text-muted transition-colors hover:border-accent hover:text-accent"
+              className="group flex items-center gap-3 border border-line bg-panel p-3 font-mono text-xs text-muted transition-colors hover:border-accent hover:bg-panel-muted hover:text-accent"
             >
               {link.icon}
               <span className="break-all">{link.label}</span>
             </a>
           ))}
         </div>
+        <p className="mt-8 font-mono text-[10px] uppercase tracking-widest text-soft">
+          end of report
+        </p>
       </div>
-      <p className="mt-8 text-center font-mono text-xs text-soft">
-        end of report.
-      </p>
     </Section>
   );
 }

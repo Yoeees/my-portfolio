@@ -74,7 +74,7 @@ export default function Header() {
                       className={`h-px transition-all ${
                         isActive
                           ? "w-12 bg-accent"
-                          : "w-6 bg-line group-hover:w-12 group-hover:bg-accent"
+                          : "w-0 bg-line group-hover:w-12 group-hover:bg-accent"
                       }`}
                     />
                     <span>/{link.label}</span>

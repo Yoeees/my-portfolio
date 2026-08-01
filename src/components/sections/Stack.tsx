@@ -17,7 +17,7 @@ export default function Stack() {
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="border-2 border-line bg-panel-muted px-3 py-1 font-mono text-xs text-muted transition-brutal hover:border-accent hover:bg-accent-soft hover:text-accent hover:shadow-brutal-sm hover:-translate-x-0.5 hover:-translate-y-0.5"
+                  className="border-2 border-line bg-panel-muted px-3 py-1 font-mono text-xs text-muted transition-brutal cursor-pointer hover:border-accent hover:bg-accent-soft hover:text-accent hover:shadow-brutal-sm hover:-translate-x-0.5 hover:-translate-y-0.5"
                 >
                   {item}
                 </li>

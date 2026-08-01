@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Moon, Sun } from "lucide-react";
 import { ThemeProvider } from "../lib/theme";
 import { useTheme } from "../lib/theme-context";
 import { PROJECTS } from "../data";
@@ -9,7 +9,7 @@ function ProjectsPageContent() {
   const { theme, toggle } = useTheme();
 
   return (
-    <div className="min-h-screen bg-paper text-ink font-body">
+    <div className="min-h-screen bg-paper text-ink font-body page-enter">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 sm:px-8 lg:flex-row lg:gap-16 lg:px-12 xl:px-16">
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[42%] lg:max-w-xl lg:flex-col lg:justify-between py-8 lg:py-24">
           <div>
@@ -38,7 +38,7 @@ function ProjectsPageContent() {
               className="cursor-pointer mb-6 inline-flex items-center gap-2 rounded-full border border-line px-3 py-2 font-mono text-xs text-muted transition-colors hover:border-accent hover:text-accent"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? "☀ SUN" : "☾ MOON"}
+              {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
             </button>
             <p className="font-mono text-xs uppercase tracking-widest text-soft">
               TOTAL: {PROJECTS.length} systems
@@ -72,15 +72,6 @@ function ProjectsPageContent() {
                 </div>
               </article>
             ))}
-          </div>
-
-          <div className="mt-8">
-            <a
-              href="/"
-              className="inline-flex items-center gap-2 border-2 border-line bg-panel px-4 py-2 font-mono text-xs text-muted transition-brutal cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm hover:border-accent hover:text-accent"
-            >
-              ← RETURN_HOME
-            </a>
           </div>
         </main>
       </div>

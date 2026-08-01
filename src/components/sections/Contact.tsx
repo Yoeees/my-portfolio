@@ -50,7 +50,7 @@ const contactLinks = [
   {
     label: "Resume.pdf",
     href: "/resume.pdf",
-    external: false,
+    external: true,
     icon: <DocumentIcon size={16} />,
   },
 ];

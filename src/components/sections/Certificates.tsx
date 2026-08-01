@@ -16,9 +16,9 @@ function CertificateCard({
   return (
     <button
       onClick={onClick}
-      className="text-left relative flex flex-col border border-stone-200 rounded-lg bg-white w-full h-full hover:-translate-y-1 hover:shadow-lg hover:border-signal/40 transition-all duration-200"
+      className="text-left relative flex flex-col border border-line rounded-lg bg-panel w-full h-full hover:-translate-y-1 hover:shadow-lg hover:border-accent/40 transition-all duration-200"
     >
-      <div className="aspect-[4/3] bg-stone-50 border-b border-stone-200 rounded-t-lg overflow-hidden">
+      <div className="aspect-[4/3] bg-panel-muted border-b border-line rounded-t-lg overflow-hidden">
         {cert.image ? (
           <img
             src={cert.image}
@@ -26,7 +26,7 @@ function CertificateCard({
             className="w-full h-full object-contain p-2"
           />
         ) : cert.pdf ? (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-1.5 text-stone-300">
+          <div className="w-full h-full flex flex-col items-center justify-center gap-1.5 text-soft">
             <FileText size={28} />
             <span className="font-mono text-[9px] uppercase tracking-wide">
               PDF on file
@@ -39,18 +39,18 @@ function CertificateCard({
         )}
       </div>
       {cert.image && (
-        <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-terminal border-2 border-white shadow flex items-center justify-center text-white text-[10px] font-bold">
+        <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-accent border-2 border-panel shadow flex items-center justify-center text-panel text-[10px] font-bold">
           ✓
         </span>
       )}
 
       <div className="p-4">
         <h3 className="text-ink font-medium leading-snug">{cert.title}</h3>
-        <p className="mt-1 text-sm text-stone-500">{cert.issuer}</p>
-        <div className="mt-2 flex items-center gap-3 font-mono text-[10px] text-stone-400">
+        <p className="mt-1 text-sm text-muted">{cert.issuer}</p>
+        <div className="mt-2 flex items-center gap-3 font-mono text-[10px] text-soft">
           <span>{cert.date || "—"}</span>
           {cert.url && (
-            <span className="flex items-center gap-1 text-signal">
+            <span className="flex items-center gap-1 text-accent">
               view <ExternalLink size={10} />
             </span>
           )}
@@ -66,8 +66,8 @@ export default function Certificates() {
   return (
     <Section id="certificates" title="CERTIFICATES">
       {CERTIFICATES.length === 0 ? (
-        <div className="border border-dashed border-stone-300 rounded p-8 text-center">
-          <p className="font-mono text-xs text-stone-400">
+        <div className="border border-dashed border-line rounded p-8 text-center">
+          <p className="font-mono text-xs text-soft">
             no certificates logged yet — add entries to the CERTIFICATES
             array in data.ts to populate this section.
           </p>

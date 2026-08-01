@@ -12,7 +12,7 @@ export default function About() {
             personal_profile
           </p>
           <p className="text-muted leading-relaxed">
-            I'm a Cum Laude Computer Science graduate currently upskilling in
+            I'm a Computer Science graduate currently upskilling in
             data engineering while I look for my first full-time role. My
             thesis compared deep reinforcement learning algorithms for anomaly
             detection, and my OJT with DOST-Caraga put me on two applied AI

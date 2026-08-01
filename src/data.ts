@@ -56,7 +56,7 @@ export const EDUCATION = {
 export const STACK: StackGroup[] = [
   {
     group: "Languages & Data",
-    items: ["Python", "pandas", "PostgreSQL", "scikit-learn"],
+    items: ["Python", "pandas", "PostgreSQL", "scikit-learn","C++", "JavaScript", "TypeScript", "SQL"],
   },
   {
     group: "Pipelines & Infra",

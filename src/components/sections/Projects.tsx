@@ -9,20 +9,20 @@ export default function Projects() {
       <div className="space-y-4">
         {PROJECTS.map((p, i) => (
           <Reveal key={p.title} delay={i * 80}>
-            <article className="group border-2 border-line bg-panel p-5 transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal hover:border-accent">
+            <article className="border-2 border-line bg-panel p-5 shadow-brutal">
               <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">
                 <span>{String(i + 1).padStart(2, "0")}</span>
                 <span className="text-accent">{p.tag}</span>
                 <span>{p.period}</span>
               </div>
 
-              <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-ink group-hover:text-accent">
+              <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-ink">
                 {p.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{p.body}</p>
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {p.tags.map((t) => (
-                  <Tag key={t} className="text-[10px]">
+                  <Tag key={t} className="text-[10px]" static>
                     {t}
                   </Tag>
                 ))}

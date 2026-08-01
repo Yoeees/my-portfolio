@@ -51,7 +51,7 @@ function ProjectsPageContent() {
             {PROJECTS.map((project, i) => (
               <article
                 key={project.title}
-                className="border-2 border-line bg-panel p-5 transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal hover:border-accent"
+                className="border-2 border-line bg-panel p-5 shadow-brutal"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">
                   <span>{String(i + 1).padStart(2, "0")}</span>
@@ -65,7 +65,7 @@ function ProjectsPageContent() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">{project.body}</p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
-                    <Tag key={tag} className="text-[10px]">
+                    <Tag key={tag} className="text-[10px]" static>
                       {tag}
                     </Tag>
                   ))}

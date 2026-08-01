@@ -39,14 +39,14 @@ export default function Header() {
             <button
               type="button"
               onClick={toggle}
-              className="text-muted transition-colors hover:text-accent"
+              className="cursor-pointer text-muted transition-colors hover:text-accent"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <button
               type="button"
-              className="text-muted transition-colors hover:text-accent"
+              className="cursor-pointer text-muted transition-colors hover:text-accent"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
@@ -65,7 +65,7 @@ export default function Header() {
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className={`group flex items-center gap-3 transition-colors hover:text-accent ${
+                    className={`group flex items-center gap-3 cursor-pointer transition-colors hover:text-accent ${
                       isActive ? "text-accent" : ""
                     }`}
                   >
@@ -90,7 +90,7 @@ export default function Header() {
         <button
           type="button"
           onClick={toggle}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-line px-3 py-2 font-mono text-xs text-muted transition-colors hover:border-accent hover:text-accent"
+          className="cursor-pointer mb-6 inline-flex items-center gap-2 rounded-full border border-line px-3 py-2 font-mono text-xs text-muted transition-colors hover:border-accent hover:text-accent"
           aria-label="Toggle theme"
         >
           {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}

@@ -22,7 +22,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <a
-      className={`font-mono text-xs uppercase tracking-wide px-4 py-2.5 transition-brutal ${VARIANT_CLASSES[variant]} ${className}`}
+      className={`font-mono text-xs uppercase tracking-wide px-4 py-2.5 transition-brutal cursor-pointer ${VARIANT_CLASSES[variant]} ${className}`}
       {...rest}
     >
       {children}

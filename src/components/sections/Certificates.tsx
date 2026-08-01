@@ -33,7 +33,7 @@ export default function Certificates() {
                       href={cert.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="ml-auto flex items-center gap-1 font-mono text-xs text-accent hover:underline"
+                      className="ml-auto flex items-center gap-1 font-mono text-xs text-accent hover:underline cursor-pointer"
                     >
                       View_File <ExternalLink size={12} />
                     </a>

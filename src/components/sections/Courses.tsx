@@ -16,7 +16,7 @@ function CourseCard({
   return (
     <button
       onClick={() => course.image && onImageClick(course.image)}
-      className="group w-full border-2 border-line bg-panel px-5 py-4 text-left transition-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal hover:border-accent"
+      className="group w-full border-2 border-line bg-panel px-5 py-4 text-left transition-brutal cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal hover:border-accent"
     >
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
         <span className="font-mono text-[10px] uppercase tracking-widest text-soft">

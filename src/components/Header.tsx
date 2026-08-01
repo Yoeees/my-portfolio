@@ -65,19 +65,13 @@ export default function Header() {
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className={`group flex items-center gap-3 cursor-pointer transition-colors hover:text-accent ${
+                    className={`cursor-pointer transition-colors hover:text-accent ${
                       isActive ? "text-accent" : ""
                     }`}
                   >
                     <span className="text-soft">{String(index + 1).padStart(2, "0")}</span>
-                    <span
-                      className={`h-px transition-all ${
-                        isActive
-                          ? "w-12 bg-accent"
-                          : "w-0 bg-line group-hover:w-12 group-hover:bg-accent"
-                      }`}
-                    />
-                    <span>/{link.label}</span>
+                    <span className="mx-3">/</span>
+                    <span>{link.label}</span>
                   </a>
                 </li>
               );

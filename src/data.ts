@@ -28,6 +28,17 @@ export interface Course {
   url?: string;
 }
 
+export interface WorkExperience {
+  tag: string;
+  title: string;
+  company: string;
+  period: string;
+  body: string;
+  tags: string[];
+  image?: string;
+  url?: string;
+}
+
 export interface NavLink {
   href: string;
   label: string;
@@ -38,6 +49,7 @@ export const STATUS_LINE = "open to data engineering roles · BS CS 2026";
 export const NAV_LINKS: NavLink[] = [
   { href: "#about", label: "About" },
   { href: "#stack", label: "Stack" },
+  { href: "#experience", label: "Work Experience" },
   { href: "#projects", label: "Projects" },
   { href: "#certificates", label: "Certificates" },
   { href: "#courses", label: "Courses" },
@@ -77,13 +89,19 @@ export const PROJECTS: Project[] = [
       "Benchmarked four deep reinforcement learning algorithms — DQN, QR-DQN, PPO, and Recurrent PPO — paired with a convolutional autoencoder for anomaly detection on the Edge-IIoTset dataset. Recurrent PPO came out on top. Also prepared the research poster and SVG methodology diagrams for the defense.",
     tags: ["DQN", "PPO", "Recurrent PPO", "Autoencoder", "Edge-IIoTset"],
   },
+];
+
+export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     tag: "OJT · DEFECT DETECTION",
     title: "Robusta Coffee Defect Detection + No-Code Training Platform",
+    company: "DOST-Caraga",
     period: "On-the-Job Training, DOST-Caraga",
     body:
       "Built a YOLO-based mobile app that flags defects in Robusta coffee beans bean-by-bean, and contributed to a no-code platform that lets non-technical users train their own detection models.",
     tags: ["YOLO", "Computer Vision", "Mobile", "No-Code ML"],
+    image: undefined,
+    url: undefined,
   },
 ];
 

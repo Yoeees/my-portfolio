@@ -31,7 +31,7 @@ function WorkExperienceCard({
       <p className="mt-2 text-sm leading-relaxed text-muted">{job.body}</p>
       <div className="mt-4 flex flex-wrap gap-1.5">
         {job.tags.map((t) => (
-          <Tag key={t} static className="text-[10px]">
+          <Tag key={t}  className="text-[10px]">
             {t}
           </Tag>
         ))}

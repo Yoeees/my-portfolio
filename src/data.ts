@@ -90,6 +90,30 @@ export const PROJECTS: Project[] = [
       "Benchmarked four deep reinforcement learning algorithms — DQN, QR-DQN, PPO, and Recurrent PPO — paired with a convolutional autoencoder for anomaly detection on the Edge-IIoTset dataset. Recurrent PPO came out on top. Also prepared the research poster and SVG methodology diagrams for the defense.",
     tags: ["DQN", "PPO", "Recurrent PPO", "Autoencoder", "Edge-IIoTset"],
   },
+  {
+    tag: "COMPILER · FULL-STACK IDE",
+    title: "JaFA — Custom Programming Language + Web IDE",
+    period: "Programming Languages Course",
+    body:
+      "Built a complete programming language called JaFA with C-like syntax and Bisaya-inspired keywords, a compiler that generates MIPS assembly, and a browser-based IDE with Monaco Editor, syntax highlighting, autocomplete, and triple output panels (runtime, assembly, machine code).",
+    tags: ["C", "Flex/Bison", "MIPS Assembly", "TypeScript", "Monaco Editor", "Vite"],
+  },
+  {
+    tag: "FULL-STACK · LAB SYSTEM",
+    title: "CSU BioLab — Lab Equipment Reservation System",
+    period: "Software Development",
+    body:
+      "Full-stack web app for managing laboratory equipment reservations at Caraga State University. Flask backend with JWT auth, SQLAlchemy models, conflict-checked booking, and a React + Material-UI frontend with admin and student dashboards, notifications, and search/filter.",
+    tags: ["Python", "Flask", "React", "TypeScript", "SQLAlchemy", "JWT"],
+  },
+  {
+    tag: "GAME DEV · 2D ADVENTURE",
+    title: "Explorers of the Pelagic",
+    period: "ITE 18 Final Project",
+    body:
+      "2D adventure game built in GameMaker Studio 2 — explored game design patterns including sprite animation, room transitions, collision systems, and tilemap-based level design across 95 commits.",
+    tags: ["GameMaker", "GML", "Game Design", "2D Art"],
+  },
 ];
 
 export const WORK_EXPERIENCE: WorkExperience[] = [

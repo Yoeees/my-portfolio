@@ -12,11 +12,22 @@ export default function About() {
             personal_profile
           </p>
           <p className="text-muted leading-relaxed">
-            I'm a Computer Science graduate currently upskilling in
-            data engineering while I look for my first full-time role. My
-            thesis compared deep reinforcement learning algorithms for anomaly
-            detection, and my OJT with DOST-Caraga put me on two applied AI
-            projects — from computer vision to no-code model training.
+            Hi there! I&rsquo;m Johnwences, and I like building things that
+            work well and make sense. I&rsquo;m an aspiring data engineer with
+            a strong foundation in machine learning, backend systems, and the
+            kind of tooling that turns messy data into something you can
+            actually trust. I care about clean code, consistent design, and
+            getting the details right &mdash; not just making it work, but
+            making it work well.
+          </p>
+          <p className="text-muted leading-relaxed">
+            I&rsquo;ve built a wide range of things: a custom programming
+            language with a C compiler and browser-based IDE, a full-stack
+            lab reservation system with Flask and React, a reinforcement
+            learning framework for IoT anomaly detection (my thesis), and
+            even a 2D adventure game in GameMaker. Each project taught me
+            something different, and I like that variety &mdash; it keeps me
+            sharp and curious.
           </p>
         </div>
 

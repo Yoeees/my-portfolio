@@ -24,18 +24,17 @@ function CourseCard({
         <h3 className="text-ink font-medium leading-snug">
           {course.title}
         </h3>
-        <p className="text-sm text-muted">{course.issuer}</p>
-        <span className="font-mono text-[10px] text-soft">
-          {course.date || "—"}
-        </span>
       </div>
+      <p className="mt-1 text-sm text-muted">
+        {course.issuer}{course.date && <span> · {course.date}</span>}
+      </p>
       <div className="mt-2 flex gap-3 font-mono text-[10px] text-accent">
         {/* {course.url && (
           <span className="flex items-center gap-1">
             Open_Link <ExternalLink size={10} />
           </span>
         )} */}
-        {course.image && <span>View_File</span>}
+        {course.image && <span>View_File →</span>}
       </div>
     </button>
   );

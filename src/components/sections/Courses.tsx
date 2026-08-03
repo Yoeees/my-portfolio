@@ -17,17 +17,19 @@ function CourseCard({
       onClick={() => course.image && onImageClick(course.image)}
       className="w-full cursor-pointer border-2 border-line bg-panel px-5 py-4 text-left shadow-brutal"
     >
-      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1  ">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-soft">
-          CRS-{String(index + 1).padStart(2, "0")}
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-soft">
+            CRS-{String(index + 1).padStart(2, "0")}
+          </span>
+          <h3 className="text-ink font-medium leading-snug">
+            {course.title}
+          </h3>
+        </div>
+        <span className="font-mono text-[10px] text-soft">
+          {course.issuer}{course.date && <span> · {course.date}</span>}
         </span>
-        <h3 className="text-ink font-medium leading-snug">
-          {course.title}
-        </h3>
       </div>
-      <p className="mt-1 text-sm text-muted">
-        {course.issuer}{course.date && <span> · {course.date}</span>}
-      </p>
       <div className="mt-2 flex gap-3 font-mono text-[10px] text-accent">
         {/* {course.url && (
           <span className="flex items-center gap-1">

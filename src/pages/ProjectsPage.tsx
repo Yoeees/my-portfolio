@@ -1,4 +1,4 @@
-import { ArrowLeft, Moon, Sun } from "lucide-react";
+import { ArrowLeft, ExternalLink, Moon, Sun } from "lucide-react";
 import { ThemeProvider } from "../lib/theme";
 import { useTheme } from "../lib/theme-context";
 import { PROJECTS } from "../data";
@@ -70,6 +70,18 @@ function ProjectsPageContent() {
                     </Tag>
                   ))}
                 </div>
+                {project.url && (
+                  <div className="mt-3 flex gap-3 font-mono text-[10px] text-accent">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1 cursor-pointer hover:underline"
+                    >
+                      View_Thesis <ExternalLink size={10} />
+                    </a>
+                  </div>
+                )}
               </article>
             ))}
           </div>

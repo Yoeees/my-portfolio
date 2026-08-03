@@ -1,6 +1,7 @@
 import Section from "../ui/Section";
 import Tag from "../ui/Tag";
 import Reveal from "../ui/Reveal";
+import { ExternalLink } from "lucide-react";
 import { PROJECTS } from "../../data";
 
 export default function Projects() {
@@ -27,6 +28,18 @@ export default function Projects() {
                   </Tag>
                 ))}
               </div>
+              {p.url && (
+                <div className="mt-3 flex gap-3 font-mono text-[10px] text-accent">
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-1 cursor-pointer hover:underline"
+                  >
+                    View_Thesis <ExternalLink size={10} />
+                  </a>
+                </div>
+              )}
             </article>
           </Reveal>
         ))}

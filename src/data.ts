@@ -1,4 +1,5 @@
 import dataengineerCert from "./assets/certificate_page-0001.jpg";
+import sqlfundamentals from "./assets/SQL_Fundamentals.jpg"
 
 export interface StackGroup {
   group: string;
@@ -11,6 +12,7 @@ export interface Project {
   period: string;
   body: string;
   tags: string[];
+  url?: string;
 }
 
 export interface Certificate {
@@ -89,6 +91,7 @@ export const PROJECTS: Project[] = [
     body:
       "Benchmarked four deep reinforcement learning algorithms — DQN, QR-DQN, PPO, and Recurrent PPO — paired with a convolutional autoencoder for anomaly detection on the Edge-IIoTset dataset. Recurrent PPO came out on top. Also prepared the research poster and SVG methodology diagrams for the defense.",
     tags: ["DQN", "PPO", "Recurrent PPO", "Autoencoder", "Edge-IIoTset"],
+    url: "/Thesis.pdf",
   },
   {
     tag: "COMPILER · FULL-STACK IDE",
@@ -133,10 +136,17 @@ export const CERTIFICATES: Certificate[] = [];
 
 export const COURSES: Course[] = [
   {
-    title: "Data Engineering Professional Certificate",
+    title: "Data Engineering in Python",
     issuer: "DataCamp",
     date: "2026",
     url: "https://www.datacamp.com/statement-of-accomplishment/track/1fecdc0cde3cfd03cd0de1acb24ded464ea93371?raw=1",
     image: dataengineerCert,
+  },
+  {
+    title: "SQL Fundamentals",
+    issuer: "DataCamp",
+    date: "2026",
+    url: "https://www.datacamp.com/statement-of-accomplishment/track/5184ca30c0d4df2308441f58619c17745ffc4ee5?raw=1",
+    image: sqlfundamentals,
   },
 ];

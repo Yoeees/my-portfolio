@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { ExternalLink } from "lucide-react";
 import Section from "../ui/Section";
 import Reveal from "../ui/Reveal";
 import { COURSES, type Course } from "../../data";
@@ -18,7 +17,7 @@ function CourseCard({
       onClick={() => course.image && onImageClick(course.image)}
       className="w-full cursor-pointer border-2 border-line bg-panel px-5 py-4 text-left shadow-brutal"
     >
-      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1  ">
         <span className="font-mono text-[10px] uppercase tracking-widest text-soft">
           CRS-{String(index + 1).padStart(2, "0")}
         </span>
@@ -31,11 +30,11 @@ function CourseCard({
         </span>
       </div>
       <div className="mt-2 flex gap-3 font-mono text-[10px] text-accent">
-        {course.url && (
+        {/* {course.url && (
           <span className="flex items-center gap-1">
             Open_Link <ExternalLink size={10} />
           </span>
-        )}
+        )} */}
         {course.image && <span>View_File</span>}
       </div>
     </button>

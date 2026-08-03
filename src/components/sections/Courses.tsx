@@ -26,7 +26,7 @@ function CourseCard({
             {course.title}
           </h3>
         </div>
-        <span className="font-mono text-[10px] text-soft">
+        <span className="font-mono text-[15px] text-soft">
           {course.issuer}{course.date && <span> · {course.date}</span>}
         </span>
       </div>

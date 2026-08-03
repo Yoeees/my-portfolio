@@ -9,7 +9,8 @@ export default function Certificates() {
       {CERTIFICATES.length === 0 ? (
         <div className="border-2 border-dashed border-line bg-panel p-6 text-center">
           <p className="font-mono text-xs uppercase tracking-widest text-soft">
-            no certificates logged yet
+            no certificates logged yet <br/>
+            (Currently Taking Data Engineering Professional Certificate at DataCamp)
           </p>
         </div>
       ) : (

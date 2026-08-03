@@ -1,5 +1,7 @@
 import dataengineerCert from "./assets/certificate_page-0001.jpg";
 import sqlfundamentals from "./assets/SQL_Fundamentals.jpg"
+import dostCert from "./assets/DOST CARAGA.jpg";
+import lodiCert from "./assets/Project LODI.jpg";
 
 export interface StackGroup {
   group: string;
@@ -85,6 +87,14 @@ export const STACK: StackGroup[] = [
 
 export const PROJECTS: Project[] = [
   {
+    tag: "DATA ENGINEERING · PERSONAL",
+    title: "Data Engineering Projects",
+    period: "Dec 2025 – Present",
+    body:
+      "Built ETL pipelines to ingest, transform, and store data from multiple sources, including weather APIs, taxi datasets, and stock market data. Automated data workflows using Apache Airflow for scheduled extraction and processing, and performed data cleaning with Pandas.",
+    tags: ["Python", "Apache Airflow", "Pandas", "ETL", "PostgreSQL"],
+  },
+  {
     tag: "THESIS · ANOMALY DETECTION",
     title: "Reinforcement Learning for IoT Anomaly Detection",
     period: "Undergraduate Thesis",
@@ -121,7 +131,7 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    tag: "DEFECT DETECTION",
+    tag: "Machine Learning / Computer Vision",
     title: "Robusta Coffee Defect Detection + No-Code Training Platform",
     company: "DOST-Caraga",
     role: "Intern",
@@ -129,6 +139,18 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     body:
       "Built a YOLO-based mobile app that flags defects in Robusta coffee beans bean-by-bean, and contributed to a no-code platform that lets non-technical users train their own detection models.",
     tags: ["YOLO", "Computer Vision", "Mobile", "No-Code ML"],
+    image: dostCert,
+  },
+  {
+    tag: "QA Testing / Analysis",
+    title: "DOST Project League of Developers Initiative (LODI)",
+    company: "DOST-Central Office",
+    role: "Intern",
+    period: "Sep 2025 – Oct 2025",
+    body:
+      "Analyzed system functionality, identified defects and process improvements, documented requirements and findings, and collaborated with developers to enhance application quality.",
+    tags: ["QA Testing", "Defect Tracking", "Requirements Analysis", "Process Improvement"],
+    image: lodiCert,
   },
 ];
 

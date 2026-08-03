@@ -32,6 +32,7 @@ export interface WorkExperience {
   tag: string;
   title: string;
   company: string;
+  role?: string;
   period: string;
   body: string;
   tags: string[];
@@ -93,15 +94,14 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    tag: "OJT · DEFECT DETECTION",
+    tag: "DEFECT DETECTION",
     title: "Robusta Coffee Defect Detection + No-Code Training Platform",
     company: "DOST-Caraga",
-    period: "On-the-Job Training, DOST-Caraga",
+    role: "Intern",
+    period: "Jan 2025 – May 2025",
     body:
       "Built a YOLO-based mobile app that flags defects in Robusta coffee beans bean-by-bean, and contributed to a no-code platform that lets non-technical users train their own detection models.",
     tags: ["YOLO", "Computer Vision", "Mobile", "No-Code ML"],
-    image: undefined,
-    url: undefined,
   },
 ];
 

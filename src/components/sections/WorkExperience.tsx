@@ -99,6 +99,15 @@ export default function WorkExperience() {
         </div>
       )}
 
+      <div className="mt-6">
+        <a
+          href="/experience"
+          className="inline-flex items-center gap-2 border-2 border-line bg-panel px-4 py-2 font-mono text-xs text-muted transition-brutal cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm hover:border-accent hover:text-accent"
+        >
+          View_All_Experience →
+        </a>
+      </div>
+
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"

@@ -8,7 +8,7 @@ export default function Projects() {
   return (
     <Section id="projects" title="SYSTEM_DEPLOYS">
       <div className="space-y-4">
-        {PROJECTS.map((p, i) => (
+        {PROJECTS.slice(0, 4).map((p, i) => (
           <Reveal key={p.title} delay={i * 80}>
             <article className="border-2 border-line bg-panel p-5 shadow-brutal">
               <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">

@@ -138,7 +138,7 @@ export default function WorkExperience() {
               <img
                 src={selectedImage}
                 alt="Statement of accomplishment"
-                className="w-full object-contain border-2 border-line bg-panel-muted"
+                className="w-full max-h-[70vh] object-contain border-2 border-line bg-panel-muted"
               />
             </div>
             <div className="border-t-2 border-line px-4 py-2">

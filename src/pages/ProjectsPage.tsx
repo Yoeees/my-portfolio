@@ -41,7 +41,7 @@ function ProjectsPageContent() {
               {theme === "dark" ? "LIGHT_MODE" : "DARK_MODE"}
             </button>
             <p className="font-mono text-xs uppercase tracking-widest text-soft">
-              TOTAL: {PROJECTS.length} systems
+              TOTAL: {PROJECTS.length} system{PROJECTS.length === 1 ? "" : "s"}
             </p>
           </div>
         </header>

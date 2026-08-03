@@ -14,11 +14,10 @@ function WorkExperienceCard({
   index: number;
   onImageClick: (img: string) => void;
 }) {
-  return (
-    <button
-      onClick={() => job.image && onImageClick(job.image)}
-      className="w-full cursor-pointer border-2 border-line bg-panel p-5 text-left shadow-brutal"
-    >
+  const isClickable = job.image !== undefined || job.url !== undefined;
+
+  const content = (
+    <>
       <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">
         <span>{String(index + 1).padStart(2, "0")}</span>
         <span className="text-accent">{job.tag}</span>
@@ -39,12 +38,38 @@ function WorkExperienceCard({
       </div>
       <div className="mt-3 flex gap-3 font-mono text-[10px] text-accent">
         {job.url && (
-          <span className="flex items-center gap-1">
+          <a
+            href={job.url}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="flex items-center gap-1 cursor-pointer hover:underline"
+          >
             Open_Link <ExternalLink size={10} />
-          </span>
+          </a>
         )}
         {job.image && <span>View_File</span>}
       </div>
+    </>
+  );
+
+  const className =
+    "w-full border-2 border-line bg-panel p-5 text-left shadow-brutal";
+
+  if (!isClickable) {
+    return <article className={className}>{content}</article>;
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        if (job.image) onImageClick(job.image);
+        else if (job.url) window.open(job.url, "_blank", "noreferrer");
+      }}
+      className={`${className} cursor-pointer`}
+    >
+      {content}
     </button>
   );
 }

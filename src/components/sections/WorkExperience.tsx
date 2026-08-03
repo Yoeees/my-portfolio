@@ -14,10 +14,8 @@ function WorkExperienceCard({
   index: number;
   onImageClick: (img: string) => void;
 }) {
-  const isClickable = job.image !== undefined || job.url !== undefined;
-
-  const content = (
-    <>
+  return (
+    <article className="w-full border-2 border-line bg-panel p-5 shadow-brutal">
       <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">
         <span>{String(index + 1).padStart(2, "0")}</span>
         <span className="text-accent">{job.tag}</span>
@@ -27,7 +25,9 @@ function WorkExperienceCard({
       <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-ink">
         {job.title}
       </h3>
-      <p className="mt-1 text-sm text-muted">{job.company}</p>
+      <p className="mt-1 text-sm text-muted">
+        {job.company}{job.role && <span> · {job.role}</span>}
+      </p>
       <p className="mt-2 text-sm leading-relaxed text-muted">{job.body}</p>
       <div className="mt-4 flex flex-wrap gap-1.5">
         {job.tags.map((t) => (
@@ -42,35 +42,22 @@ function WorkExperienceCard({
             href={job.url}
             target="_blank"
             rel="noreferrer"
-            onClick={(e) => e.stopPropagation()}
             className="flex items-center gap-1 cursor-pointer hover:underline"
           >
             Open_Link <ExternalLink size={10} />
           </a>
         )}
-        {job.image && <span>View_File</span>}
+        {job.image && (
+          <button
+            type="button"
+            onClick={() => onImageClick(job.image!)}
+            className="flex items-center gap-1 cursor-pointer hover:underline"
+          >
+            View_Certificate →
+          </button>
+        )}
       </div>
-    </>
-  );
-
-  const className =
-    "w-full border-2 border-line bg-panel p-5 text-left shadow-brutal";
-
-  if (!isClickable) {
-    return <article className={className}>{content}</article>;
-  }
-
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        if (job.image) onImageClick(job.image);
-        else if (job.url) window.open(job.url, "_blank", "noreferrer");
-      }}
-      className={`${className} cursor-pointer`}
-    >
-      {content}
-    </button>
+    </article>
   );
 }
 

@@ -36,27 +36,29 @@ function WorkExperienceCard({
           </Tag>
         ))}
       </div>
-      <div className="mt-3 flex gap-3 font-mono text-[10px] text-accent">
-        {job.url && (
-          <a
-            href={job.url}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-1 cursor-pointer hover:underline"
-          >
-            Open_Link <ExternalLink size={10} />
-          </a>
-        )}
-        {job.image && (
-          <button
-            type="button"
-            onClick={() => onImageClick(job.image!)}
-            className="flex items-center gap-1 cursor-pointer hover:underline"
-          >
-            View_Certificate →
-          </button>
-        )}
-      </div>
+      {(job.url || job.image) && (
+        <div className="mt-3 flex gap-3 font-mono text-[10px] text-accent">
+          {job.url && (
+            <a
+              href={job.url}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1 cursor-pointer hover:underline"
+            >
+              Open_Link <ExternalLink size={10} />
+            </a>
+          )}
+          {job.image && (
+            <button
+              type="button"
+              onClick={() => onImageClick(job.image!)}
+              className="flex items-center gap-1 cursor-pointer hover:underline"
+            >
+              View_Certificate →
+            </button>
+          )}
+        </div>
+      )}
     </article>
   );
 }
@@ -99,14 +101,16 @@ export default function WorkExperience() {
         </div>
       )}
 
-      <div className="mt-6">
-        <a
-          href="/experience"
-          className="inline-flex items-center gap-2 border-2 border-line bg-panel px-4 py-2 font-mono text-xs text-muted transition-brutal cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm hover:border-accent hover:text-accent"
-        >
-          View_All_Experience →
-        </a>
-      </div>
+      {WORK_EXPERIENCE.length > 0 && (
+        <div className="mt-6">
+          <a
+            href="/experience"
+            className="inline-flex items-center gap-2 border-2 border-line bg-panel px-4 py-2 font-mono text-xs text-muted transition-brutal cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm hover:border-accent hover:text-accent"
+          >
+            View_All_Experience →
+          </a>
+        </div>
+      )}
 
       {selectedImage && (
         <div

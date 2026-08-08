@@ -1,8 +1,70 @@
-import { ArrowLeft, ExternalLink, Moon, Sun } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, ExternalLink, Moon, Sun, ChevronDown } from "lucide-react";
 import { ThemeProvider } from "../lib/theme";
 import { useTheme } from "../lib/theme-context";
 import { PROJECTS } from "../data";
 import Tag from "../components/ui/Tag";
+
+function ProjectCard({ project, index }: { project: (typeof PROJECTS)[number]; index: number }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <article className="border-2 border-line bg-panel p-5 shadow-brutal">
+      <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">
+        <span>{String(index + 1).padStart(2, "0")}</span>
+        <span className="text-accent">{project.tag}</span>
+        <span>{project.period}</span>
+      </div>
+
+      <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-ink">
+        {project.title}
+      </h3>
+      <p className="mt-2 text-sm leading-relaxed text-muted">{project.body}</p>
+      <div className="mt-4 flex flex-wrap gap-1.5">
+        {project.tags.map((tag) => (
+          <Tag key={tag} className="text-[10px]" >
+            {tag}
+          </Tag>
+        ))}
+      </div>
+      <div className="mt-3 flex flex-wrap gap-3 font-mono text-[10px] text-accent">
+        {project.url && (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1 cursor-pointer hover:underline"
+          >
+            View_Thesis <ExternalLink size={10} />
+          </a>
+        )}
+        {project.fullDesc && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="flex items-center gap-1 cursor-pointer hover:underline"
+          >
+            View_full_desc <ChevronDown size={10} className={`transition-transform ${expanded ? "rotate-180" : ""}`} />
+          </button>
+        )}
+      </div>
+      {project.fullDesc && expanded && (
+        <div className="mt-4 border-t-2 border-line pt-4 space-y-3 text-sm leading-relaxed text-muted">
+          {project.fullDesc.map((line, i) => {
+            if (line.startsWith("## ")) {
+              return (
+                <h4 key={i} className="font-display text-base font-semibold text-ink pt-2">
+                  {line.replace("## ", "")}
+                </h4>
+              );
+            }
+            return <p key={i}>{line}</p>;
+          })}
+        </div>
+      )}
+    </article>
+  );
+}
 
 function ProjectsPageContent() {
   const { theme, toggle } = useTheme();
@@ -49,40 +111,7 @@ function ProjectsPageContent() {
         <main className="w-full pb-16 lg:w-[58%] lg:py-24">
           <div className="space-y-4">
             {PROJECTS.map((project, i) => (
-              <article
-                key={project.title}
-                className="border-2 border-line bg-panel p-5 shadow-brutal"
-              >
-                <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-soft">
-                  <span>{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-accent">{project.tag}</span>
-                  <span>{project.period}</span>
-                </div>
-
-                <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-ink">
-                  {project.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{project.body}</p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {project.tags.map((tag) => (
-                    <Tag key={tag} className="text-[10px]" >
-                      {tag}
-                    </Tag>
-                  ))}
-                </div>
-                {project.url && (
-                  <div className="mt-3 flex gap-3 font-mono text-[10px] text-accent">
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center gap-1 cursor-pointer hover:underline"
-                    >
-                      View_Thesis <ExternalLink size={10} />
-                    </a>
-                  </div>
-                )}
-              </article>
+              <ProjectCard key={project.title} project={project} index={i} />
             ))}
           </div>
         </main>

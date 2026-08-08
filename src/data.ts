@@ -15,6 +15,7 @@ export interface Project {
   body: string;
   tags: string[];
   url?: string;
+  fullDesc?: string[];
 }
 
 export interface Certificate {
@@ -87,6 +88,29 @@ export const STACK: StackGroup[] = [
 
 export const PROJECTS: Project[] = [
   {
+    tag: "RAG · PERSONAL",
+    title: "Quantum Inspired RAG",
+    period: "Ongoing",
+    body:
+      "Investigates whether quantum-inspired tensor network decomposition — specifically Tucker and tensor-train (MPS) — can compress retrieved-passage embeddings in RAG systems more effectively than hard and soft compression baselines.",
+    tags: ["Python", "TensorLy", "PyTorch", "RAG", "Tensor Decomposition"],
+    fullDesc: [
+      "## Problem",
+      "RAG systems ground LLM outputs in retrieved documents, but this substantially increases input context length, raising inference latency and token cost. Existing compression methods — hard (selection/extraction) and soft (autoencoders like ICAE, xRAG, COCOM) — either lack learned semantic compression or compress indiscriminately without query conditioning.",
+      "## Approach",
+      "Applies quantum-inspired tensor network decomposition (Tucker and tensor-train/MPS) to retrieved-passage embeddings. Unlike autoencoders, tensor decomposition provides interpretable structure (core tensor + factor matrices revealing semantic modes), controlled compression via rank selection, and query-conditioned potential.",
+      "## Methodology",
+      "1. Baselines: no compression, hard compression (selection + extraction + token budget), simple autoencoder",
+      "2. Tensor compressor: reshape retrieved-chunk embeddings into a higher-order tensor, decompose via Tucker/TT, reconstruct",
+      "3. LLM interface: feed reconstructed text to local LLM (Qwen3/Llama 3.2 via Ollama) — no model modification required",
+      "4. Evaluation: Natural Questions and TriviaQA — answer accuracy (EM/F1), compression ratio, latency, reconstruction fidelity",
+      "## Expected Contributions",
+      "First application of Tucker/tensor-train decomposition to retrieved-passage embeddings for RAG context compression, with empirical comparison against hard/soft baselines. Prior work (CompactifAI, KARIPAP, TensorLLM) applies tensor networks only to LLM weight compression.",
+      "## Tech Stack",
+      "TensorLy · PyTorch · sentence-transformers · Chroma/FAISS · Ollama · Hugging Face datasets · tiktoken · pandas/matplotlib",
+    ],
+  },
+  {
     tag: "DATA ENGINEERING · PERSONAL",
     title: "Data Engineering Projects",
     period: "Dec 2025 – Present",
@@ -110,6 +134,7 @@ export const PROJECTS: Project[] = [
     body:
       "Built a complete programming language called JaFA with C-like syntax and Bisaya-inspired keywords, a compiler that generates MIPS assembly, and a browser-based IDE with Monaco Editor, syntax highlighting, autocomplete, and triple output panels (runtime, assembly, machine code).",
     tags: ["C", "Flex/Bison", "MIPS Assembly", "TypeScript", "Monaco Editor", "Vite"],
+    url:'https://jafa-pl.vercel.app/'
   },
   {
     tag: "FULL-STACK · LAB SYSTEM",

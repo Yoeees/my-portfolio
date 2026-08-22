@@ -1,5 +1,6 @@
 import dataengineerCert from "./assets/certificate_page-0001.jpg";
 import sqlfundamentals from "./assets/SQL_Fundamentals.jpg"
+import deProfessionalCert from "./assets/data-engineering-cert.jpg";
 import dostCert from "./assets/DOST CARAGA.jpg";
 import lodiCert from "./assets/Project LODI.jpg";
 
@@ -23,6 +24,7 @@ export interface Certificate {
   issuer: string;
   date?: string;
   url?: string;
+  image?: string;
 }
 
 export interface Course {
@@ -179,7 +181,14 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
 ];
 
-export const CERTIFICATES: Certificate[] = [];
+export const CERTIFICATES: Certificate[] = [
+  {
+    title: "Data Engineering Professional Certificate",
+    issuer: "DataCamp",
+    date: "Aug 2026",
+    image: deProfessionalCert,
+  },
+];
 
 export const COURSES: Course[] = [
   {

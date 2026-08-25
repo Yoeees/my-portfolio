@@ -28,16 +28,17 @@ function ProjectCard({ p, index }: { p: (typeof PROJECTS)[number]; index: number
         ))}
       </div>
       <div className="mt-3 flex flex-wrap gap-3 font-mono text-[10px] text-accent">
-        {p.url && (
+        {(p.links ?? []).map((link) => (
           <a
-            href={p.url}
+            key={link.href}
+            href={link.href}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-1 cursor-pointer hover:underline"
           >
-            View_Thesis <ExternalLink size={10} />
+            {link.label} <ExternalLink size={10} />
           </a>
-        )}
+        ))}
         {p.fullDesc && (
           <button
             type="button"

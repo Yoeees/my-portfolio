@@ -9,13 +9,18 @@ export interface StackGroup {
   items: string[];
 }
 
+export interface ProjectLink {
+  label: string;
+  href: string;
+}
+
 export interface Project {
   tag: string;
   title: string;
   period: string;
   body: string;
   tags: string[];
-  url?: string;
+  links?: ProjectLink[];
   fullDesc?: string[];
 }
 
@@ -90,6 +95,18 @@ export const STACK: StackGroup[] = [
 
 export const PROJECTS: Project[] = [
   {
+    tag: "DATA ENGINEERING · PIPELINE",
+    title: "DPWH Caraga Flood Control Data Pipeline",
+    period: "Aug 2026",
+    body:
+      "End-to-end ELT pipeline ingesting Philippine flood-control project data from two independent government sources (DPWH portal + BetterGov), reconciling them into a unified fact table and flagging records matching publicly documented procurement anomaly patterns — orchestrated with Airflow, transformed with dbt, containerized with Docker, served via a live Streamlit dashboard.",
+    tags: ["Python", "Apache Airflow", "PostgreSQL", "dbt", "Docker", "Streamlit"],
+    links: [
+      { label: "View_Repo", href: "https://github.com/Yoeees/Data_Engineering_DPWH13_Project" },
+      { label: "Live_Dashboard", href: "https://dataengineeringdpwh13project.streamlit.app/" },
+    ],
+  },
+  {
     tag: "RAG · PERSONAL",
     title: "Quantum Inspired RAG",
     period: "Ongoing",
@@ -127,7 +144,7 @@ export const PROJECTS: Project[] = [
     body:
       "Benchmarked four deep reinforcement learning algorithms — DQN, QR-DQN, PPO, and Recurrent PPO — paired with a convolutional autoencoder for anomaly detection on the Edge-IIoTset dataset. Recurrent PPO came out on top. Also prepared the research poster and SVG methodology diagrams for the defense.",
     tags: ["DQN", "PPO", "Recurrent PPO", "Autoencoder", "Edge-IIoTset"],
-    url: "/Thesis.pdf",
+    links: [{ label: "View_Thesis", href: "/Thesis.pdf" }],
   },
   {
     tag: "COMPILER · FULL-STACK IDE",
@@ -136,7 +153,7 @@ export const PROJECTS: Project[] = [
     body:
       "Built a complete programming language called JaFA with C-like syntax and Bisaya-inspired keywords, a compiler that generates MIPS assembly, and a browser-based IDE with Monaco Editor, syntax highlighting, autocomplete, and triple output panels (runtime, assembly, machine code).",
     tags: ["C", "Flex/Bison", "MIPS Assembly", "TypeScript", "Monaco Editor", "Vite"],
-    url:'https://jafa-pl.vercel.app/'
+    links: [{ label: "View_Live", href: "https://jafa-pl.vercel.app/" }],
   },
   {
     tag: "FULL-STACK · LAB SYSTEM",

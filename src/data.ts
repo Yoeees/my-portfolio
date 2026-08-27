@@ -96,10 +96,10 @@ export const STACK: StackGroup[] = [
 export const PROJECTS: Project[] = [
   {
     tag: "DATA ENGINEERING · PIPELINE",
-    title: "DPWH Caraga Flood Control Data Pipeline",
+    title: "DPWH Caraga Infrastractures Data Pipeline",
     period: "Aug 2026",
     body:
-      "End-to-end ELT pipeline ingesting Philippine flood-control project data from two independent government sources (DPWH portal + BetterGov), reconciling them into a unified fact table and flagging records matching publicly documented procurement anomaly patterns — orchestrated with Airflow, transformed with dbt, containerized with Docker, served via a live Streamlit dashboard.",
+      "End-to-end ELT pipeline ingesting Caraga Infrastractures project data from two independent government sources (DPWH portal + BetterGov), reconciling them into a unified fact table and flagging records matching publicly documented procurement anomaly patterns — orchestrated with Airflow, transformed with dbt, containerized with Docker, served via a live Streamlit dashboard.",
     tags: ["Python", "Apache Airflow", "PostgreSQL", "dbt", "Docker", "Streamlit"],
     links: [
       { label: "View_Repo", href: "https://github.com/Yoeees/Data_Engineering_DPWH13_Project" },

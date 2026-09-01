@@ -85,7 +85,7 @@ export const STACK: StackGroup[] = [
   },
   {
     group: "Pipelines & Infra",
-    items: ["Apache Airflow", "Docker", "Linux","DataBricks"],
+    items: ["Apache Airflow", "Docker", "Linux","Databricks"],
   },
   {
     group: "Web",

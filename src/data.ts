@@ -3,6 +3,7 @@ import sqlfundamentals from "./assets/SQL_Fundamentals.jpg"
 import deProfessionalCert from "./assets/data-engineering-cert.jpg";
 import dostCert from "./assets/DOST CARAGA.jpg";
 import lodiCert from "./assets/Project LODI.jpg";
+import associateDatabricksDE from "./assets/Associate_Databricks_dataengineer.png";
 
 export interface StackGroup {
   group: string;
@@ -222,4 +223,13 @@ export const COURSES: Course[] = [
     url: "https://www.datacamp.com/statement-of-accomplishment/track/5184ca30c0d4df2308441f58619c17745ffc4ee5?raw=1",
     image: sqlfundamentals,
   },
+  {
+    title: "Associate Data Engineer in Databricks",
+    issuer: "DataCamp",
+    date: "2026",
+    url: "https://www.datacamp.com/completed/statement-of-accomplishment/track/35b97077e44cfa6ae87d73848a2dc4fe8cb4c49f?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa",
+    image: associateDatabricksDE,
+  },
+
+
 ];

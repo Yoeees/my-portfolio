@@ -49,7 +49,7 @@ export default function About() {
             </p>
             <div className="flex flex-wrap gap-1.5">
               {LANGUAGES.map((lang) => (
-                <Tag key={lang} className="text-xs text-muted">
+                <Tag key={lang} className="!rounded-none text-xs text-muted">
                   {lang}
                 </Tag>
               ))}
